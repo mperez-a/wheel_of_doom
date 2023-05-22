@@ -12,37 +12,32 @@
 	font-family: 'Creepster', sans-serif;
 }
 
+header {
+	background-image: url("/img/header-blood.png");
+	background-size: cover;
+	height: 100px;
+	padding-top: 0.313rem;
+}
+
 body {
 	background-color: var(--background-color);
 }
 
-/*.header-container {
-	position: relative;
-}*/
-header {
-	background-image: url('/img/header-blood.png');
-	background-size: 100%;
-	width: 100%;
-	height: 142px;
-}
-
-
-.blood-img, .skull-logo, .logo {
-	/* position: absolute; */
-}
-
-.skull-logo, .logo{
-	margin: 1rem 2rem;
-}
-.logo {
-	padding: 0.5rem 3rem;
+.header-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
 	font-size: 1.875rem;
-}
-
-.header-blood {
-	width: 100%;
 }
 
 main {
 	color: var(--color-font-main);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	font-size: 3rem;
 }

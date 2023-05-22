@@ -9,20 +9,20 @@
 </head>
 <body>
 	<header>
-		<div>
-			<div class="test">
+		<div class="header-container">
 			<img src="/img/skull-logo.png" alt="logo-skull" class="skull-logo">
 			<span class="logo">Painful dead coder</span>
-			</div>
-			<!-- <img src="/img/header-blood.png" alt="header-blood" class="blood-img"> -->
-			<!-- <img src="/img/skull-logo.png" alt="logo-skull" class="skull-logo">
-			<span class="logo">Painful dead coder</span> -->
 		</div>
 	</header>
 	<main>
 		<h1>Wheel of Doom</h1>
-		<p>This is a game where a fair and aleatory system will choose a coder to died.</p>
-		<a href="#">Click to Start</a>
+		<p>This is a game where a fair and aleatory system will choose a coder to died. Also you can add or delete a coder.</p>
+		<input type="text" placeholder="write a name here" id="coder-name">
+		<button id="add-btn">Add coder</button>
+		<button id="delete-btn">Delete coder</button>
+		<ul id="coders-list"></ul>
+		<a href="/HTML/wheel_of_doom.html">Click to Start</a>
 	</main>
+	<script src="/JavaScript/index.js"></script>
 </body>
 </html>
