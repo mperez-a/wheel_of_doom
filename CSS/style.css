@@ -1,1 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+:root {
+	--background-color: #191919;
+	--color-font-main: #b91212;
+	--color-font-header: #ffffff;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Creepster', sans-serif;
+}
+
+body {
+	background-color: var(--background-color);
+}
+
+/*.header-container {
+	position: relative;
+}*/
+
+.blood-img, .skull-logo, .logo {
+	position: absolute;
+}
+.skull-logo, .logo{
+	margin: 1rem 2rem;
+}
+.logo {
+	padding: 0.5rem 3rem;
+	font-size: 1.875rem;
+}
+
+.header-blood {
+	width: 100%;
+}
