@@ -5,11 +5,11 @@ let codersList = [
 	"Jacinemy",
 	"Yana",
 	"Monica",
-	"Rosa P",
+	"Rosa",
 	"Manuela",
 	"Rosmery",
 	"Lucia",
-	"Rosa R",
+	"Rosa",
 	"Lorena",
 	"Cindy",
 	"Leandra",
@@ -22,7 +22,13 @@ let codersList = [
 	"Rafaela",
 	"Sylvia",
 	"Teresa",
-	"Zoraida"];
+	"Zoraida"
+];
+
+codersList.forEach((coderName, index) => {
+	codersList[index] = coderName.toLowerCase();
+});
+console.log(codersList);
 
 function displayList() {
 	const coders_list = document.getElementById("coders-list");
@@ -37,18 +43,19 @@ function displayList() {
 
 function addCoder() {
 	const coderInput = document.getElementById("coder-name");
-	const coder = coderInput.value.trim();
+	const coder = coderInput.value.trim().toLowerCase();
 
 	if (coder !== "") {
-		codersList.push(coder);
+		codersList.unshift(coder);
 		coderInput.value = "";
 		displayList();
 	}
+	console.log(codersList);
 }
 
 function deleteCoder() {
 	const coderInput = document.getElementById("coder-name");
-	const coder = coderInput.value.trim();
+	const coder = coderInput.value.trim().toLowerCase();
 
 	const index = codersList.indexOf(coder);
 	if(index !== -1) {
@@ -56,6 +63,7 @@ function deleteCoder() {
 		coderInput.value = "";
 		displayList();
 	}
+	console.log(codersList);
 }
 
 document.getElementById("add-btn").addEventListener("click", addCoder);
