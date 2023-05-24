@@ -70,3 +70,18 @@ document.getElementById("add-btn").addEventListener("click", addCoder);
 document.getElementById("delete-btn").addEventListener("click", deleteCoder);
 
 displayList();
+
+/*var swiper = new Swiper(".mySwiper", {
+	effect: "coverflow",
+	grabCursor: true,
+	centeredSlides:true,
+	slidesPerView: "auto",
+	coverflowEffect: {
+		rotate:15,
+		strech:0,
+		depth:500,
+		modifier:1,
+		slideShadows: true,
+	},
+	loop:true,
+});*/
