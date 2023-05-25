@@ -1,87 +1,74 @@
-let codersList = [
-	"Florencia",
-	"Laura",
-	"Denis",
-	"Jacinemy",
-	"Yana",
-	"Monica",
-	"Rosa",
-	"Manuela",
-	"Rosmery",
-	"Lucia",
-	"Rosa",
-	"Lorena",
-	"Cindy",
-	"Leandra",
-	"Valentina",
-	"Marga",
-	"Neema",
-	"Genesis",
-	"Gigi",
-	"Milena",
-	"Rafaela",
-	"Sylvia",
-	"Teresa",
-	"Zoraida"
-];
-
-codersList.forEach((coderName, index) => {
-	codersList[index] = coderName.toLowerCase();
-});
-console.log(codersList);
+let codersList = localStorage.getItem('names');
+codersList = codersList ? JSON.parse(names) : [];
 
 function displayList() {
-	const coders_list = document.getElementById("coders-list");
-	coders_list.innerHTML = "";
+	const coder_list = document.getElementById("coders-list");
+	coder_list.innerHTML = "";
 
 	codersList.forEach(element => {
 		const li = document.createElement("li");
 		li.textContent = element;
-		coders_list.appendChild(li);
+		coder_list.appendChild(li);
 	});
 }
 
 function addCoder() {
 	const coderInput = document.getElementById("coder-name");
-	const coder = coderInput.value.trim().toLowerCase();
+	const coderName = coderInput.value.trim().toLocaleLowerCase();
 
-	if (coder !== "") {
-		codersList.unshift(coder);
+	if (coderName) {
+		codersList.unshift(coderName);
+		localStorage.setItem('codersList', JSON.stringify(codersList));
 		coderInput.value = "";
-		displayList();
 	}
+	displayList();
 	console.log(codersList);
 }
 
 function deleteCoder() {
 	const coderInput = document.getElementById("coder-name");
-	const coder = coderInput.value.trim().toLowerCase();
+	const coderName = coderInput.value.trim().toLocaleLowerCase();
 
-	const index = codersList.indexOf(coder);
-	if(index !== -1) {
+	const index = codersList.indexOf(coderName);
+	if (index !== -1) {
 		codersList.splice(index, 1);
+		localStorage.removeItem('coderName', JSON.stringify(codersList));
 		coderInput.value = "";
-		displayList();
 	}
+	displayList();
 	console.log(codersList);
+}
+
+function start() {
+	try {
+		if (codersList && codersList.length > 0) {
+			window.location.href = "../HTML/wheel_of_doom.html";
+		} else {
+			throw new Error("The coders list is empty.");
+		}
+	} catch (error) {
+		displayErrorMessage(error.message);
+	}
+}
+
+function displayErrorMessage(message) {
+	const errorMessageElement = document.getElementById("error-message");
+	const errorTextElement = document.getElementById("error-text");
+
+	errorTextElement.textContent = message;
+	errorMessageElement.classList.add("active");
+
+	const errorButton = document.getElementById("error-button");
+	errorButton.addEventListener("click", hideErrorMessage);
+}
+
+function hideErrorMessage() {
+	const errorMessageElement = document.getElementById("error-message");
+	errorMessageElement.style.display = "none";
 }
 
 document.getElementById("add-btn").addEventListener("click", addCoder);
 document.getElementById("delete-btn").addEventListener("click", deleteCoder);
+document.getElementById("start-btn").addEventListener("click", start);
 
 displayList();
-
-/*var swiper = new Swiper(".mySwiper", {
-	effect: "coverflow",
-	grabCursor: true,
-	centeredSlides:true,
-	slidesPerView: "auto",
-	coverflowEffect: {
-		rotate:15,
-		strech:0,
-		depth:500,
-		modifier:1,
-		slideShadows: true,
-	},
-	loop:true,
-});*/
