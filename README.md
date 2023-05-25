@@ -58,5 +58,3 @@ Especific objetives:
         Manuela Pérez.
         Lucía Silva.
         Denise Khurlopian.
-
-![skull and crossbones](img/skull-logo.png)
