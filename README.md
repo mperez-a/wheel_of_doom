@@ -1,4 +1,4 @@
-![Blood head](img\header-blood.png)
+![Blood head](img/header-blood.png)
 # Project name: Wheel of the Doom
 
 _Proposal_
@@ -11,8 +11,8 @@ We have developed a game whith a fair and aleatory system will choose a coder to
 
 _Mockup:_
 
-![Mobile home page](img\mobile-home-page.png)
-![Game page](img\game-page.png)
+![Mobile home page](img/mobile-home-page.png)
+![Game page](img/game-page.png)
 
 
 ## CONTENTS
