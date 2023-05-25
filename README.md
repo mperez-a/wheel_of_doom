@@ -1,4 +1,4 @@
-![Blood head](img\header-blood.png)
+![Blood head](img\bloodyheaderapp.png)
 # Project name: Wheel of the Doom
 
 _Proposal_
@@ -59,4 +59,3 @@ Especific objetives:
         Lucía Silva.
         DeniseKhurlopian.
 
-![skull and crossbones](img\skull-logo.png)
