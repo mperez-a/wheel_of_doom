@@ -1,0 +1,33 @@
+.skull-main {
+	width: 20vw;
+}
+
+main{
+    height: 100%;
+}
+.select-coder{
+    padding: 0.2rem 2rem ;
+}
+
+.container{
+	max-width: 80%;
+	margin-top: 1rem;
+	padding: 0px;
+    overflow: hidden;
+}
+
+.swiper {
+	width: 100%;
+}
+
+.swiper-slide {
+    margin: 0;
+	background-position: center;
+	background-size: cover;
+	width: 100vw;
+}
+
+.swiper-slide img{
+	display: block;
+	width: 100%;
+}

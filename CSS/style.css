@@ -4,6 +4,7 @@
 	--background-color: #191919;
 	--color-font-main: #b91212;
 	--color-font-header: #ffffff;
+	--color-text-fill: #d9d9d9;
 }
 
 * {
@@ -38,12 +39,11 @@ body {
 }
 
 main {
+	height: 70vh;
 	background-image: url("/img/blood-main.png");
-	background-size: contain;
-	background-position: center top 100px;
 	color: var(--color-font-main);
 	display: flex;
-	justify-content: center;
+	justify-content: top;
 	align-items: center;
 	flex-direction: column;
 	align-items: center;
@@ -53,16 +53,23 @@ h1 {
 	font-size: 3rem;
 }
 
-.skull-main {
-	width: 20vw;
-}
-
 button {
 	background-color: var(--color-font-main);
 	box-shadow: 0px 4px 4px #DBD0AD;
 	padding: 0.3rem 1rem;
 	font-size: 1.5rem;
 	margin: 0.7rem;
+}
+
+#coder-name{
+    margin: 0;
+	padding: 0.4rem;
+	background-color: var(--color-text-fill);
+}
+
+#add-btn{
+	text-decoration: none;
+    padding: 0.2rem 2.2rem;
 }
 
 .error-message {
@@ -97,20 +104,10 @@ button {
 	cursor: pointer;
 }
 
-.blood {
-	position: absolute;
-	z-index: -1;
-}
-
-.container {
-	max-width: 1000px;
-	margin: 0 auto;
-	padding: 30px;
-}
-
-#coder-name {
-	margin: 0;
+#coder-name{
+    margin: 0;
 	padding: 0.4rem;
+	background-color: var(--color-text-fill);
 }
 
 .start {
