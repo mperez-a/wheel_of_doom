@@ -22,6 +22,12 @@ header {
 	padding: 0%;
 	padding-top: 1rem;
 	color: var(--color-font-header);
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo{
+	width: 260px;
 }
 
 body {
@@ -31,11 +37,17 @@ body {
 }
 
 .header-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+
+	margin: 3px;
 	gap: 5px;
 	font-size: 1.875rem;
+
+}
+
+.icono-info{
+	width: 10vw;
+	margin:1rem;
+
 }
 
 main {
@@ -137,3 +149,4 @@ button {
 	display: block;
 	width: 100%;
 }
+
