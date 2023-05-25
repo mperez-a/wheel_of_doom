@@ -57,6 +57,6 @@ Especific objetives:
         Rosmery Medina.
         Manuela Pérez.
         Lucía Silva.
-        DeniseKhurlopian.
+        Denise Khurlopian.
 
-![skull and crossbones](img\skull-logo.png)
+![skull and crossbones](img/skull-logo.png)
