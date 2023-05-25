@@ -38,9 +38,9 @@ body {
 }
 
 main {
-	/*width: 100vw;*/
 	background-image: url("/img/blood-main.png");
-	background-size: 100vw;
+	background-size: contain;
+	background-position: center top 100px;
 	color: var(--color-font-main);
 	display: flex;
 	justify-content: center;

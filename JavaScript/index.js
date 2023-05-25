@@ -1,47 +1,56 @@
-let codersList = localStorage.getItem('names');
-codersList = codersList ? JSON.parse(names) : [];
+// Constantes para los nombres de los elementos del DOM
+const ELEMENTS = {
+	CODER_LIST: document.getElementById("coders-list"),
+	CODER_INPUT: document.getElementById("coder-name"),
+	ERROR_MESSAGE: document.getElementById("error-message"),
+	ERROR_TEXT: document.getElementById("error-text"),
+	ERROR_BUTTON: document.getElementById("error-button"),
+	ADD_BUTTON: document.getElementById("add-btn"),
+	DELETE_BUTTON: document.getElementById("delete-btn"),
+	START_BUTTON: document.getElementById("start-btn")
+};
+
+let codersList = localStorage.getItem('codersList');
+codersList = codersList ? JSON.parse(codersList) : [];
 
 function displayList() {
-	const coder_list = document.getElementById("coders-list");
-	coder_list.innerHTML = "";
+	ELEMENTS.CODER_LIST.innerHTML = "";
 
 	codersList.forEach(element => {
-		const li = document.createElement("li");
-		li.textContent = element;
-		coder_list.appendChild(li);
-	});
+	const li = document.createElement("li");
+	li.textContent = element;
+	ELEMENTS.CODER_LIST.appendChild(li);
+});
 }
 
 function addCoder() {
-	const coderInput = document.getElementById("coder-name");
-	const coderName = coderInput.value.trim().toLocaleLowerCase();
+	const coderName = ELEMENTS.CODER_INPUT.value.trim().toLocaleLowerCase();
 
 	if (coderName) {
-		codersList.unshift(coderName);
-		localStorage.setItem('codersList', JSON.stringify(codersList));
-		coderInput.value = "";
-	}
+	codersList.unshift(coderName);
+	localStorage.setItem('codersList', JSON.stringify(codersList));
+	ELEMENTS.CODER_INPUT.value = "";
 	displayList();
 	console.log(codersList);
+	}
 }
 
 function deleteCoder() {
-	const coderInput = document.getElementById("coder-name");
-	const coderName = coderInput.value.trim().toLocaleLowerCase();
+	const coderName = ELEMENTS.CODER_INPUT.value.trim().toLocaleLowerCase();
 
 	const index = codersList.indexOf(coderName);
 	if (index !== -1) {
-		codersList.splice(index, 1);
-		localStorage.removeItem('coderName', JSON.stringify(codersList));
-		coderInput.value = "";
-	}
+	codersList.splice(index, 1);
+	localStorage.setItem('codersList', JSON.stringify(codersList));
+	ELEMENTS.CODER_INPUT.value = "";
 	displayList();
 	console.log(codersList);
+	}
 }
 
 function start() {
 	try {
-		if (codersList && codersList.length > 0) {
+		if (codersList.length > 0) {
 			window.location.href = "../HTML/wheel_of_doom.html";
 		} else {
 			throw new Error("The coders list is empty.");
@@ -52,23 +61,22 @@ function start() {
 }
 
 function displayErrorMessage(message) {
-	const errorMessageElement = document.getElementById("error-message");
-	const errorTextElement = document.getElementById("error-text");
+	ELEMENTS.ERROR_TEXT.textContent = message;
+	ELEMENTS.ERROR_MESSAGE.classList.add("active");
 
-	errorTextElement.textContent = message;
-	errorMessageElement.classList.add("active");
-
-	const errorButton = document.getElementById("error-button");
-	errorButton.addEventListener("click", hideErrorMessage);
+	ELEMENTS.ERROR_BUTTON.addEventListener("click", hideErrorMessage);
 }
 
 function hideErrorMessage() {
-	const errorMessageElement = document.getElementById("error-message");
-	errorMessageElement.style.display = "none";
+	ELEMENTS.ERROR_MESSAGE.style.display = "none";
 }
 
-document.getElementById("add-btn").addEventListener("click", addCoder);
-document.getElementById("delete-btn").addEventListener("click", deleteCoder);
-document.getElementById("start-btn").addEventListener("click", start);
+ELEMENTS.ADD_BUTTON.addEventListener("click", addCoder);
+ELEMENTS.DELETE_BUTTON.addEventListener("click", deleteCoder);
+ELEMENTS.START_BUTTON.addEventListener("click", start);
+
+window.addEventListener("beforeunload", function() {
+	this.localStorage.removeItem("codersList");
+});
 
 displayList();
