@@ -11,8 +11,8 @@ We have developed a game whith a fair and aleatory system will choose a coder to
 
 _Mockup:_
 
-![Mobile home page](img/mobile-home-page.png)
-![Game page](img/game-page.png)
+![Mobile home page](templates/mobile-home-page.png)
+![Game page](templates/game-page.png)
 
 
 ## CONTENTS
