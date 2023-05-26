@@ -22,7 +22,6 @@ function addCoder() {
 		coderInput.value = "";
 	}
 	displayList();
-	console.log(codersList);
 }
 
 function deleteCoder() {
@@ -36,7 +35,6 @@ function deleteCoder() {
 		coderInput.value = "";
 	}
 	displayList();
-	console.log(codersList);
 }
 
 function start() {
