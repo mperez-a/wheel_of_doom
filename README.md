@@ -1,5 +1,5 @@
 ![Blood head](img/header-blood.png)
-# Project name: Wheel of the Doom
+# Wheel of the Doom
 
 _Proposal_
 
