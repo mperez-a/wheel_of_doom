@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css');
+@import url('/CSS/pop_up.css');
 
 :root {
 	--background-color: #191919;
@@ -26,7 +28,7 @@ header {
 	justify-content: space-between;
 }
 
-.logo{
+.logo {
 	width: 260px;
 }
 
@@ -37,17 +39,14 @@ body {
 }
 
 .header-container {
-
 	margin: 3px;
 	gap: 5px;
 	font-size: 1.875rem;
-
 }
 
-.icono-info{
+.icono-info {
 	width: 10vw;
 	margin:1rem;
-
 }
 
 main {
@@ -73,7 +72,7 @@ button {
 	margin: 0.7rem;
 }
 
-#coder-name{
+#coder-name {
     margin: 0;
 	padding: 0.4rem;
 	background-color: var(--color-text-fill);
@@ -116,7 +115,7 @@ button {
 	cursor: pointer;
 }
 
-#coder-name{
+#coder-name {
     margin: 0;
 	padding: 0.4rem;
 	background-color: var(--color-text-fill);
@@ -149,4 +148,3 @@ button {
 	display: block;
 	width: 100%;
 }
-

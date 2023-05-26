@@ -27,11 +27,10 @@ function addCoder() {
 	const coderName = ELEMENTS.CODER_INPUT.value.trim().toLocaleLowerCase();
 
 	if (coderName) {
-	codersList.unshift(coderName);
-	localStorage.setItem('codersList', JSON.stringify(codersList));
-	ELEMENTS.CODER_INPUT.value = "";
-	displayList();
-	console.log(codersList);
+		codersList.unshift(coderName);
+		localStorage.setItem('codersList', JSON.stringify(codersList));
+		ELEMENTS.CODER_INPUT.value = "";
+		displayList();
 	}
 }
 
@@ -44,7 +43,6 @@ function deleteCoder() {
 	localStorage.setItem('codersList', JSON.stringify(codersList));
 	ELEMENTS.CODER_INPUT.value = "";
 	displayList();
-	console.log(codersList);
 	}
 }
 
@@ -71,12 +69,12 @@ function hideErrorMessage() {
 	ELEMENTS.ERROR_MESSAGE.style.display = "none";
 }
 
-ELEMENTS.ADD_BUTTON.addEventListener("click", addCoder);
-ELEMENTS.DELETE_BUTTON.addEventListener("click", deleteCoder);
-ELEMENTS.START_BUTTON.addEventListener("click", start);
-
 window.addEventListener("beforeunload", function() {
 	this.localStorage.removeItem("codersList");
 });
+
+ELEMENTS.ADD_BUTTON.addEventListener("click", addCoder);
+ELEMENTS.DELETE_BUTTON.addEventListener("click", deleteCoder);
+ELEMENTS.START_BUTTON.addEventListener("click", start);
 
 displayList();

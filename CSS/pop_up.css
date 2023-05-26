@@ -1,5 +1,4 @@
-.modal{
-
+.modal {
     display: none;
     background: rgba(0, 0, 0,0.4);
     width: 100vw;
@@ -11,11 +10,9 @@
     justify-content: center;
     align-items: center;
     z-index: 100;
-    
-
 }
 
-.modal-container{
+.modal-container {
     background: #fff;
     min-width: 200px;
     max-width: 90%;
@@ -24,9 +21,6 @@
     padding: 20px;
     position: relative;
 	background-image: url("/img/blood-main.png");
-
-
-
 }
 
 .close-modal {
@@ -42,11 +36,11 @@ position: absolute;
 right: -10px;
 top: -10px;
 cursor: pointer;
-
 }
 
-.info-text{
+.info-text {
     font-size: 2rem;
+    color: #000000;
 }
 
 @media screen and (max-width:800px){
