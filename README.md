@@ -1,4 +1,4 @@
-![Blood head](img\bloodyheaderapp.png)
+![Blood head](img\header-blood.png)
 # Project name: Wheel of the Doom
 
 _Proposal_
@@ -11,8 +11,8 @@ We have developed a game whith a fair and aleatory system will choose a coder to
 
 _Mockup:_
 
-![Mobile home page](img\mobile-home-page.png)
-![Game page](img\game-page.png)
+![Mobile home page](templates/home-page.png)
+![Game page](templates/game-page.png)
 
 
 ## CONTENTS
@@ -40,22 +40,23 @@ Especific objetives:
 - Know the correct use of tools and technologies.
 
 ### Technologies
-
-- HTML.
-- CSS.
-- Javascript.
+<div> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </div>
 
 ### Tools
-- Figma.
-- Visual Studio Code.
-- Trello.
-- Git / GitHub.
--Agile Methodologies - Scrum.
+<div>
+<img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/>
+<img src="https://w7.pngwing.com/pngs/512/824/png-transparent-visual-studio-code-hd-logo-thumbnail.png" alt="vscode" width="40" heigth="40"/>
+<img src="https://w7.pngwing.com/pngs/115/721/png-transparent-trello-social-icons-icon.png" alt="trello" width="40" heigth="40"/>
+<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
+<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" width="40" heigth="40"/> </div>
 
 ### Developers
 
         Rosmery Medina.
         Manuela Pérez.
         Lucía Silva.
-        DeniseKhurlopian.
+        Denise Khurlopian.
 
+![skull and crossbones](img\skull-logo.png)

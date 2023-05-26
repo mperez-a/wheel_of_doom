@@ -4,6 +4,7 @@
 	--background-color: #191919;
 	--color-font-main: #b91212;
 	--color-font-header: #ffffff;
+	--color-text-fill: #d9d9d9;
 }
 
 * {
@@ -15,13 +16,18 @@
 
 header {
 	background-image: url("/img/header-blood.png");
-	background-size: cover;
+	background-size:cover;
 	height: 20vh;
-	width: 100vw;
 	margin: 0%;
 	padding: 0%;
 	padding-top: 1rem;
 	color: var(--color-font-header);
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo{
+	width: 260px;
 }
 
 body {
@@ -31,18 +37,25 @@ body {
 }
 
 .header-container {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+
+	margin: 3px;
 	gap: 5px;
 	font-size: 1.875rem;
+
+}
+
+.icono-info{
+	width: 10vw;
+	margin:1rem;
+
 }
 
 main {
-	width: 100vw;
+	height: 70vh;
+	background-image: url("/img/blood-main.png");
 	color: var(--color-font-main);
 	display: flex;
-	justify-content: center;
+	justify-content: top;
 	align-items: center;
 	flex-direction: column;
 	align-items: center;
@@ -52,11 +65,7 @@ h1 {
 	font-size: 3rem;
 }
 
-.skull-main{
-	width: 20vw;
-}
-
-button{
+button {
 	background-color: var(--color-font-main);
 	box-shadow: 0px 4px 4px #DBD0AD;
 	padding: 0.3rem 1rem;
@@ -64,28 +73,61 @@ button{
 	margin: 0.7rem;
 }
 
-.blood{
-	position: absolute;
-	z-index: -1;
+#coder-name{
+    margin: 0;
+	padding: 0.4rem;
+	background-color: var(--color-text-fill);
 }
 
-.container{
-	max-width: 1000px;
-	margin: 0 auto;
-	padding: 30px;
+#add-btn{
+	text-decoration: none;
+    padding: 0.2rem 2.2rem;
+}
+
+.error-message {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #f8d7da;
+	color: #000000;
+	padding: 10px;
+	border-radius: 5px;
+	z-index: 9999;
+	display: none;
+}
+
+.error-message.active {
+	display: flex;
+	flex-direction: column;
+}
+
+.error-message #error-text {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.error-message #error-button {
+	background-color: #dc3545;
+	color: #000000;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 3px;
+	cursor: pointer;
 }
 
 #coder-name{
-	margin: 0;
+    margin: 0;
 	padding: 0.4rem;
+	background-color: var(--color-text-fill);
 }
 
-.start{
+.start {
 	margin: 0;
 	padding: 0.5rem 4rem;
 }
 
-#coders-list{
+#coders-list {
 	column-count: 2;
 	color: var(--color-font-header);
 	font-size: 1.5rem;
@@ -103,7 +145,7 @@ button{
 	width: 250px;
 }
 
-.swiper-slide img{
+.swiper-slide img {
 	display: block;
 	width: 100%;
 }
