@@ -14,7 +14,7 @@ function displayList() {
 
 function addCoder() {
 	const coderInput = document.getElementById("coder-name");
-	const coderName = coderInput.value.trim().toLocaleLowerCase();
+	const coderName = coderInput.value.trim().toLowerCase();
 
 	if (coderName) {
 		codersList.unshift(coderName);
@@ -26,7 +26,7 @@ function addCoder() {
 
 function deleteCoder() {
 	const coderInput = document.getElementById("coder-name");
-	const coderName = coderInput.value.trim().toLocaleLowerCase();
+	const coderName = coderInput.value.trim().toLowerCase();
 
 	const index = codersList.indexOf(coderName);
 	if (index !== -1) {
