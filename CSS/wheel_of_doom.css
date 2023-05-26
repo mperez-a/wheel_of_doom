@@ -31,3 +31,44 @@ main{
 	display: block;
 	width: 100%;
 }
+
+.rip-container {
+    position: relative;
+  }
+  
+  .rip-container img {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /*falta hacer clase a la lista de coders para posicionar coder sobre tarjeta */
+  .ghost-container {
+    display: none;
+  }
+  
+  @keyframes ghostFly {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.ghost-animation {
+  animation: ghostFly 3s ease-in-out;
+}
+/*
+En este ejemplo, hemos definido una animación llamada "ghostFly" que dura 3 segundos. 
+El fantasma comienza fuera de la pantalla a la izquierda (transform: translateX(-100%)) con una
+ opacidad de 0. Luego, a la mitad de la animación (50%), el fantasma se desplaza hacia la derecha 
+ y se vuelve completamente visible (transform: translateX(0) y opacity: 1). Al final de la animación
+  (100%), el fantasma se desplaza fuera de la pantalla a la derecha y su opacidad vuelve a 0 (transform:
+   translateX(100%) y opacity: 0).
