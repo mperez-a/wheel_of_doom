@@ -2,10 +2,11 @@
 	width: 20vw;
 }
 
-main{
+main {
     height: 100%;
 }
-.select-coder{
+
+.select-coder {
     padding: 0.2rem 2rem ;
 }
 
@@ -27,7 +28,7 @@ main{
 	width: 100vw;
 }
 
-.swiper-slide img{
+.swiper-slide img {
 	display: block;
 	width: 100%;
 }
