@@ -9,7 +9,7 @@ const closeModal = () => {
 }
 
 modalAdd.onclik = (event) => {
-    if(event.target == modalAdd){
+    if(event.target == modalAdd) {
         closeModal();
     }
 }
