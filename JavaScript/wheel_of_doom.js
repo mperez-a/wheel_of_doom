@@ -33,7 +33,7 @@ startButton.addEventListener("click", function () {
   // Deshabilitar el botón mientras se realiza la rotación
   startButton.disabled = true;
 
-  var totalTime = 3000;
+  var totalTime = 2500;
   // Obtener el intervalo de tiempo para avanzar al siguiente slide
   var slideInterval = 400; // 200 milisegundos
   // Calcular el número total de slides en el swiper
@@ -87,6 +87,7 @@ startButton.addEventListener("click", function () {
 
       if (names.length === 1) {
         // Reproducir el sonido de felicitación
+        explocion.pause();//agregar sonido de bomba y risa para que no se reproduzca
         var congratulationSound = new Audio("/sound/winner.mp3");
         var popup = document.getElementById("popup");
         var popupMessage = document.getElementById("popup-message");
@@ -111,7 +112,7 @@ startButton.addEventListener("click", function () {
         swiper.slideTo(0); // Regresar al primer slide
         ripContainer.innerHTML = ""; // Vaciar el contenedor de la imagen de "rip"
         startButton.disabled = false; // Habilitar el botón
-      }, 1000); // Esperar 3 segundos antes de reiniciar el juego
+      }, 3000); // Esperar 3 segundos antes de reiniciar el juego
       
     }
   }, slideInterval);
