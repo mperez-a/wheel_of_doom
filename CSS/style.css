@@ -33,7 +33,7 @@ header {
 }
 
 body {
-	max-width: 100vh;
+	max-width: 100vw;
 	min-width: 0vw;
 	background-color: var(--background-color);
 }
@@ -50,7 +50,7 @@ body {
 }
 
 main {
-	height: 70vh;
+	height: 80vh;
 	background-image: url("/img/blood-main.png");
 	color: var(--color-font-main);
 	display: flex;

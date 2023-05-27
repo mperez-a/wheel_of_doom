@@ -3,6 +3,12 @@ let names = storedCodersList ? JSON.parse(storedCodersList) : [];
 
 console.log(names);
 
+var restartButton = document.getElementById("restart-button");
+
+restartButton.addEventListener("click", function() {
+  window.location.href = "/index.html"; 
+});
+
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
   grabCursor: true,
@@ -18,7 +24,6 @@ var swiper = new Swiper(".mySwiper", {
   loop: true,
 });
 
-// Obtener el botón y el slider
 var startButton = document.getElementById("start-button");
 var swiper = document.querySelector(".mySwiper").swiper;
 
@@ -28,15 +33,18 @@ startButton.addEventListener("click", function () {
   // Deshabilitar el botón mientras se realiza la rotación
   startButton.disabled = true;
 
-  
-  var totalTime = 5000;
+  var totalTime = 3000;
   // Obtener el intervalo de tiempo para avanzar al siguiente slide
   var slideInterval = 400; // 200 milisegundos
   // Calcular el número total de slides en el swiper
   var totalSlides = swiper.slides.length;
 
+  var audio = new Audio("/sound/Sonido.mp3");
+  audio.play();
+
   // Iniciar la rotación del slider
   var rotationTimer = setInterval(function () {
+    
     // Avanzar al siguiente slide
     swiper.slideNext();
 
@@ -52,6 +60,7 @@ startButton.addEventListener("click", function () {
       var randomIndex = Math.floor(Math.random() * names.length);
       var selectedCoder = names[randomIndex];
 
+
       // Mostrar el nombre seleccionado en la consola
       console.log("Selected coder:", selectedCoder);
 
@@ -66,38 +75,44 @@ startButton.addEventListener("click", function () {
       ripContainer.innerHTML = "";
 
       // Agregar el nombre seleccionado y la imagen de "rip" al contenedor
-      ripContainer.appendChild(document.createTextNode(selectedCoder));
+      var nameElement = document.createElement("span");
+      nameElement.classList.add("rip-name");
+      nameElement.textContent = selectedCoder;
+      ripContainer.appendChild(nameElement);
       ripContainer.appendChild(ripImage);
+
 
       // Eliminar el nombre seleccionado de la lista
       names.splice(randomIndex, 1);
 
-      // Habilitar el botón nuevamente
-      startButton.disabled = false;
+      if (names.length === 1) {
+        // Reproducir el sonido de felicitación
+        var congratulationSound = new Audio("/sound/winner.mp3");
+        var popup = document.getElementById("popup");
+        var popupMessage = document.getElementById("popup-message");
+        var closeButton = document.getElementById("close-popup");
+        congratulationSound.play();
+        popupMessage.textContent = "¡Felicidades! " + names[0] + " Has ganado el juego.";
+        
+        // Mostrar el popup
+        popup.style.display = "flex";
+        startButton.disabled = true;
+
+        function hidePopupMessage() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+          }
+
+        closeButton.addEventListener("click", hidePopupMessage);
+        return;
+      }
+
+      setTimeout(function () {
+        swiper.slideTo(0); // Regresar al primer slide
+        ripContainer.innerHTML = ""; // Vaciar el contenedor de la imagen de "rip"
+        startButton.disabled = false; // Habilitar el botón
+      }, 1000); // Esperar 3 segundos antes de reiniciar el juego
+      
     }
   }, slideInterval);
-});
-function canRestartGame() {
-    return coders.length > 0;
-  }
-  
-  // Llamar a la función "canRestartGame" para verificar si se puede volver a jugar
-  if (canRestartGame()) {
-    // Puedes volver a jugar
-    restartGame();
-  } else {
-    // No hay nombres disponibles para jugar
-    console.log("No hay más nombres disponibles para jugar.");
-  }
-
-  //animacion de fantasma
-  var ripCard = document.querySelector("rip-container");
-  ripCard.classList.add("ghost-animation");
-  ghostImage.style.display = "block";
-
-  var restartButton = document.getElementById("restart-button");
-
-  restartButton.addEventListener("click", function() {
-
-  window.location.href = "/index.html";
 });
