@@ -84,16 +84,18 @@ startButton.addEventListener("click", function () {
 
       // Eliminar el nombre seleccionado de la lista
       names.splice(randomIndex, 1);
+      localStorage.removeItem('selectedCoder', JSON.stringify(names));
+      console.log(names);
 
       if (names.length === 1) {
         // Reproducir el sonido de felicitación
-        explocion.pause();//agregar sonido de bomba y risa para que no se reproduzca
+        /*explocion.pause();*///agregar sonido de bomba y risa para que no se reproduzca
         var congratulationSound = new Audio("/sound/winner.mp3");
         var popup = document.getElementById("popup");
         var popupMessage = document.getElementById("popup-message");
         var closeButton = document.getElementById("close-popup");
         congratulationSound.play();
-        popupMessage.textContent = "¡Felicidades! " + names[0] + " Has ganado el juego.";
+        popupMessage.textContent = "Congrats! " + names[0] + " You won the game.";
         
         // Mostrar el popup
         popup.style.display = "flex";

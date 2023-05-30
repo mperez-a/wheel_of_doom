@@ -1,45 +1,52 @@
 let codersList = localStorage.getItem('names');
 codersList = codersList ? JSON.parse(names) : [];
 
-function displayList() {
-	const coder_list = document.getElementById("coders-list");
-	coder_list.innerHTML = "";
+let errorMessageElement = null;
 
-	codersList.forEach(element => {
-		const li = document.createElement("li");
-		li.textContent = element;
-		coder_list.appendChild(li);
-	});
-}
+const codersListElement = document.getElementById('coders-list');
+const addBtn = document.getElementById('add-btn');
+const startBtn = document.getElementById('start-btn');
+const coderName = document.getElementById('coder-name');
 
 function addCoder() {
-	const coderInput = document.getElementById("coder-name");
-	const coderName = coderInput.value.trim().toLowerCase();
+	let name = coderName.value;
+	name = name.trim().toLowerCase();
 
-	if (coderName) {
-		codersList.unshift(coderName);
+	if (name) {
+		const li = document.createElement('li');
+		const deleteBtn = document.createElement('button');
+		li.className = 'coderName';
+		deleteBtn.className = 'delete';
+		deleteBtn.innerHTML = "x";
+		li.innerHTML = name;
+		codersListElement.appendChild(li);
+		li.appendChild(deleteBtn);
+		codersList.unshift(name);
 		localStorage.setItem('codersList', JSON.stringify(codersList));
-		coderInput.value = "";
+		coderName.value = "";
 	}
-	displayList();
+	console.log(codersList);
 }
 
-function deleteCoder() {
-	const coderInput = document.getElementById("coder-name");
-	const coderName = coderInput.value.trim().toLowerCase();
-
-	const index = codersList.indexOf(coderName);
-	if (index !== -1) {
-		codersList.splice(index, 1);
-		localStorage.removeItem('coderName', JSON.stringify(codersList));
-		coderInput.value = "";
+function deleteCoder(event) {
+	if (event.target.classList.contains('delete')) {
+		const li = event.target.parentElement;
+		const name = li.textContent.trim().toLowerCase();
+		let correctName = name.slice(0, name.length - 1);
+		console.log(correctName);
+		const index = codersList.indexOf(correctName);
+		if (index !== -1) {
+			codersList.splice(index, 1);
+			localStorage.removeItem('correctName', JSON.stringify(codersList));
+			codersListElement.removeChild(li);
+			console.log(codersList);
+		}
 	}
-	displayList();
 }
 
 function start() {
 	try {
-		if (codersList && codersList.length > 0) {
+		if (codersList && codersList.length > 1) {
 			window.location.href = "../HTML/wheel_of_doom.html";
 		} else {
 			throw new Error("The coders list is empty.");
@@ -50,23 +57,21 @@ function start() {
 }
 
 function displayErrorMessage(message) {
-	const errorMessageElement = document.getElementById("error-message");
-	const errorTextElement = document.getElementById("error-text");
+	if (!errorMessageElement) {
+		errorMessageElement = document.getElementById("error-message");
+		const errorButton = document.getElementById("error-button");
+		errorButton.addEventListener("click", hideErrorMessage);
+	}
 
+	const errorTextElement = document.getElementById("error-text");
 	errorTextElement.textContent = message;
 	errorMessageElement.classList.add("active");
-
-	const errorButton = document.getElementById("error-button");
-	errorButton.addEventListener("click", hideErrorMessage);
 }
 
 function hideErrorMessage() {
-	const errorMessageElement = document.getElementById("error-message");
-	errorMessageElement.style.display = "none";
+	errorMessageElement.classList.remove("active");
 }
 
-document.getElementById("add-btn").addEventListener("click", addCoder);
-document.getElementById("delete-btn").addEventListener("click", deleteCoder);
-document.getElementById("start-btn").addEventListener("click", start);
-
-displayList();
+addBtn.addEventListener('click', addCoder);
+codersListElement.addEventListener('click', deleteCoder);
+startBtn.addEventListener('click', start);
