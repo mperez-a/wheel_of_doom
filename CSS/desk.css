@@ -1,0 +1,28 @@
+@media screen and (min-width:1024px) {
+  
+    main{
+       height: 65vh;
+    }
+    header {
+        background-image: url("/img/header-blood.png");
+        height: 30vh;
+        padding-top: 1rem;
+        display: flex;
+    }
+
+    .title{
+        display: flex;
+        justify-content: center;
+    
+    }
+
+    .icono-info{
+        width: 3vw;
+    }
+
+    #coders-list {
+        columns: 3;
+        font-size: 1.5rem;
+        column-gap: 3vw;
+    }
+}

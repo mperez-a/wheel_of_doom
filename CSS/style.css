@@ -46,7 +46,8 @@ body {
 
 .title{
 	display: flex;
-	width: 80vw
+	width: 100%;
+	margin-left:90px;
 }
 .icono-info {
 	object-fit: contain;
@@ -135,8 +136,9 @@ button {
 	column-count: 2;
 	color: var(--color-font-header);
 	font-size: 1.5rem;
-	column-gap: 20vw;
+	column-gap: 10vw;
 	margin-top: 1rem;
+	margin-left: 2rem;
 }
 
 .swiper {
