@@ -1,114 +1,120 @@
-var restartButton = document.getElementById("restart-button");
+const storedCodersList = localStorage.getItem("codersList");
+let names = storedCodersList ? JSON.parse(storedCodersList) : [];
 
-restartButton.addEventListener("click", function() {
-  window.location.href = "/index.html"; 
-});
+console.log(names);
+
+let restartButton = document.getElementById("restart-button");
+let spinner = new Audio("/sound/spinner.mp3");
+let explotion = new Audio("/sound/explotion.mp3");
+let laught = new Audio("/sound/laught.mp3");
+
+function restartGame() {
+  window.location.href = "/index.html";
+  localStorage.removeItem("codersList");
+}
+
+restartButton.addEventListener("click", restartGame);
 
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
-  grabCursor: true,
+  
   centeredSlides: true,
   slidesPerView: "auto",
   coverflowEffect: {
     rotate: 15,
     strech: 0,
     depth: 700,
-    modifier: 1,
+    modifier: 0.5,
     slideShadows: true,
   },
-  loop: true,
 });
 
-var startButton = document.getElementById("start-button");
+let startButton = document.getElementById("start-button");
 var swiper = document.querySelector(".mySwiper").swiper;
 
-//var coders = ["Coder1", "Coder2", "Coder3", "Coder4"]; se deberia sacar y enlazar con la lista ya hecha de coders?
-// Agregar evento de clic al botón "kill"
-startButton.addEventListener("click", function () {
-  // Deshabilitar el botón mientras se realiza la rotación
+startButton.addEventListener("click", startGame);
+
+function startGame() {
   startButton.disabled = true;
 
-  var totalTime = 2500;
-  // Obtener el intervalo de tiempo para avanzar al siguiente slide
-  var slideInterval = 400; // 200 milisegundos
-  // Calcular el número total de slides en el swiper
-  var totalSlides = swiper.slides.length;
+  let totalTime = 2500;
+  let slideInterval = 400;
+  let totalSlides = swiper.slides.length;
 
-  var audio = new Audio("/sound/Sonido.mp3");
-  audio.play();
+  spinner.play();
 
-  // Iniciar la rotación del slider
-  var rotationTimer = setInterval(function () {
-    
-    // Avanzar al siguiente slide
+  let rotationTimer = setInterval(function () {
     swiper.slideNext();
-
-    // Actualizar la duración restante
     totalTime -= slideInterval;
 
-    // Verificar si se ha alcanzado el límite de tiempo
     if (totalTime <= 0) {
-      // Detener la rotación
       clearInterval(rotationTimer);
+      let randomIndex = Math.floor(Math.random() * names.length);
+      let selectedCoder = names[randomIndex];
 
-      // Seleccionar un nombre aleatorio de la lista
-      var randomIndex = Math.floor(Math.random() * names.length);
-      var selectedCoder = names[randomIndex];
+      console.log(selectedCoder);
 
-
-      // Mostrar el nombre seleccionado en la consola
-      console.log("Selected coder:", selectedCoder);
-
-      var ripImage = document.createElement("img");
-      ripImage.src = "/img/rip-card.png";
-      ripImage.alt = "RIP";
-
-      // Obtener el contenedor para la imagen de "rip"
-      var ripContainer = document.getElementById("rip-container");
-
-      // Vaciar el contenedor (en caso de que ya contenga elementos anteriores)
-      ripContainer.innerHTML = "";
-
-      // Agregar el nombre seleccionado y la imagen de "rip" al contenedor
-      var nameElement = document.createElement("span");
-      nameElement.classList.add("rip-name");
-      nameElement.textContent = selectedCoder;
-      ripContainer.appendChild(nameElement);
-      ripContainer.appendChild(ripImage);
-
-
-      // Eliminar el nombre seleccionado de la lista
-      names.splice(randomIndex, 1);
-
+      showRipCard(selectedCoder, randomIndex);
+      
       if (names.length === 1) {
-        // Reproducir el sonido de felicitación
-        explocion.pause();//agregar sonido de bomba y risa para que no se reproduzca
-        var congratulationSound = new Audio("/sound/winner.mp3");
-        var popup = document.getElementById("popup");
-        var popupMessage = document.getElementById("popup-message");
-        var closeButton = document.getElementById("close-popup");
-        congratulationSound.play();
-        popupMessage.textContent = "¡Felicidades! " + names[0] + " Has ganado el juego.";
-        
-        // Mostrar el popup
-        popup.style.display = "flex";
-        startButton.disabled = true;
-
-        function hidePopupMessage() {
-            var popup = document.getElementById("popup");
-            popup.style.display = "none";
-          }
-
-        closeButton.addEventListener("click", hidePopupMessage);
+        congratulation();
         return;
       }
 
       setTimeout(function () {
-        swiper.slideTo(0); // Regresar al primer slide
-        ripContainer.innerHTML = ""; // Vaciar el contenedor de la imagen de "rip"
-        startButton.disabled = false; // Habilitar el botón
-      }, 3000); // Esperar 3 segundos antes de reiniciar el juego
-      
+        resetGame();
+        
+      }, 3000);
     }
   }, slideInterval);
-});
+}
+
+function showRipCard(selectedCoder, randomIndex) {
+  let ripImage = document.createElement("img");
+  ripImage.src = "/img/rip-card.png";
+  ripImage.alt = "RIP";
+
+  let ripContainer = document.getElementById("rip-container");
+  ripContainer.innerHTML = "";
+
+  let nameElement = document.createElement("span");
+  nameElement.classList.add("rip-name");
+  nameElement.textContent = selectedCoder;
+  ripContainer.appendChild(nameElement);
+  ripContainer.appendChild(ripImage);
+
+  spinner.play();
+  explotion.play();
+  laught.play();
+
+  names.splice(randomIndex, 1);
+
+}
+
+function congratulation() {
+  explotion.pause();
+  laught.pause();
+  var congratulationSound = new Audio("/sound/winner.mp3");
+  var popup = document.getElementById("popup");
+  var popupMessage = document.getElementById("popup-message");
+  var closeButton = document.getElementById("close-popup");
+
+  congratulationSound.play();
+  popupMessage.textContent = "¡Congrats! " + names[0] + " You won the game!";
+  popup.style.display = "flex";
+  startButton.disabled = true;
+
+  closeButton.addEventListener("click", hidePopupMessage);
+}
+
+function resetGame() {
+  swiper.slideTo(0);
+  let ripContainer = document.getElementById("rip-container");
+  ripContainer.innerHTML = "";
+  startButton.disabled = false;
+}
+
+function hidePopupMessage() {
+  var popup = document.getElementById("popup");
+  popup.style.display = "none";
+}

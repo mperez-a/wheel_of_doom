@@ -1,9 +1,11 @@
-let codersList = [];
+let codersList = localStorage.getItem('codersList');
+codersList = codersList ? JSON.parse(codersList) : [];
+
+let errorMessageElement = null;
 
 const codersListElement = document.getElementById('coders-list');
 const addBtn = document.getElementById('add-btn');
 const startBtn = document.getElementById('start-btn');
-
 const coderName = document.getElementById('coder-name');
 
 function addCoder() {
@@ -20,6 +22,7 @@ function addCoder() {
 		codersListElement.appendChild(li);
 		li.appendChild(deleteBtn);
 		codersList.unshift(name);
+		localStorage.setItem('codersList', JSON.stringify(codersList));
 		coderName.value = "";
 	}
 	console.log(codersList);
@@ -32,18 +35,54 @@ function deleteCoder(event) {
 		let correctName = name.slice(0, name.length - 1);
 		console.log(correctName);
 		const index = codersList.indexOf(correctName);
-		codersList.splice(index, 1);
-		codersListElement.removeChild(li);
-		console.log(codersList);
+		if (index !== -1) {
+			codersList.splice(index, 1);
+			localStorage.setItem('codersList', JSON.stringify(codersList));
+			codersListElement.removeChild(li);
+			console.log(codersList);
+		}
 	}
 }
 
 function start() {
-	if (codersList.length > 1) {
-		window.location.href = "./html/wheel_of_doom.html";
+	try {
+		if (codersList.length > 1) {
+		localStorage.setItem('codersListWheel', JSON.stringify(codersList));
+		window.location.href = "../HTML/wheel_of_doom.html";
+	}
+	else {
+		throw new Error("The coders list must have at least 2 names.");
+	}
+	} 
+	catch (error) {
+		displayErrorMessage(error.message);
+	}
+}
+
+function displayErrorMessage(message) {
+	if (!errorMessageElement) {
+		errorMessageElement = document.getElementById("error-message");
+		const errorButton = document.getElementById("error-button");
+		errorButton.addEventListener("click", hideErrorMessage);
+	}
+
+	const errorTextElement = document.getElementById("error-text");
+	errorTextElement.textContent = message;
+	errorMessageElement.classList.add("active");
+}
+
+function hideErrorMessage() {
+	errorMessageElement.classList.remove("active");
+}
+
+function clearLocalStorageOnUnload(event) {
+	const isReload = event.currentTarget.performance.navigation.type === 1;
+	if (isReload) {
+		localStorage.removeItem('codersList');
 	}
 }
 
 addBtn.addEventListener('click', addCoder);
 codersListElement.addEventListener('click', deleteCoder);
 startBtn.addEventListener('click', start);
+window.addEventListener('beforeunload', clearLocalStorageOnUnload);
