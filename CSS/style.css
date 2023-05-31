@@ -134,12 +134,22 @@ button {
 }
 
 #coders-list {
-	column-count: 2;
-	color: var(--color-font-header);
 	font-size: 1.5rem;
-	column-gap: 10vw;
-	margin-top: 1rem;
-	margin-left: 2rem;
+	list-style-type: none;
+	width: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	color: white;
+}
+
+#coders-list li{
+	margin: 5px;
+}
+
+.delete{
+	padding: 0.3rem;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 0.452);
 }
 
 .swiper {

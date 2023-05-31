@@ -1,38 +1,20 @@
-@media only screen
-and (min-width: 768px)
-and (max-width: 1024px)
-{
+@media screen and (min-width: 820px) {
+  main {
+    margin: 0;
+    height: 80vh;
+  }
 
-    body{
-        margin: 0;
-        width: 100%;
-        height: 80%;
-    }
-    main{
-       height: 71vh;
-    }
-    header {
-        height: 25vh;
-      }
-    
+  header {
+    background-image: url("/img/header-blood.png");
+    height: 12vh;
+  }
 
-    .icono-info{
-        width: 3vw;
-    }
+  .icono-info {
+    width: 7vw;
+    margin: 10px;
+  }
 
-    #coders-list {
-        font-size: 1.5rem;
-        width: 80%;
-        padding: 0;
-        margin: 0;
-        column-gap: 0px;
-        display: flex;
-        flex-wrap: wrap;
-      
-    }
-
-    #coders-list li{
-        flex-basis: calc(15% - 10px);
-        margin: 10px;
-    }
+h1 {
+    font-size: 10%;
+  }
 }

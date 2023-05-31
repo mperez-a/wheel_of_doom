@@ -29,8 +29,7 @@
     }
 
     #coders-list li{
-        flex-basis: calc(18% - 10px);
-        margin: 10px;
+        margin: 20px;
     }
 
     .modal {

@@ -8,10 +8,9 @@
     background-image: url("/img/header-blood.png");
     height: 25vh;
     display: flex;
+    margin: 0;
   }
 
-
-}
   #img-skull {
     margin: 1rem;
     width: 5vw;
@@ -36,9 +35,11 @@
   .swiper-slide {
     width: 15vw;
   }
+  
   .rip-container {
-    margin:0;
     width: 15vw;
+    bottom: 2rem;
+    margin: 0;
   }
 
    .rip-name {
