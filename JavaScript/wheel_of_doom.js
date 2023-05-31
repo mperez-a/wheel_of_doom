@@ -17,17 +17,16 @@ let laught = new Audio("/sound/laught.mp3");
 
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
-  grabCursor: true,
+  
   centeredSlides: true,
   slidesPerView: "auto",
   coverflowEffect: {
     rotate: 15,
     strech: 0,
     depth: 700,
-    modifier: 1,
+    modifier: 0.5,
     slideShadows: true,
   },
-  loop: true,
 });
 
 let startButton = document.getElementById("start-button");

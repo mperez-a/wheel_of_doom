@@ -11,15 +11,27 @@
   }
 
   #img-skull {
+    margin: 1rem;
     width: 5vw;
-    vertical-align: middle;
-    padding: 1rem;
+  }
+
+  .select-coder{
+    height: 3rem;
+    margin-top: 2rem;
+  }
+
+  .restart{
+    height: 3rem;
+    margin-top: 2rem;
+  }
+
+  .header-main{
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
   }
 
   .swiper-slide {
-    margin: 0;
-    background-position: center;
-    background-size: cover;
     width: 15vw;
   }
   .rip-container {
@@ -27,8 +39,9 @@
     width: 15vw;
   }
 
-  .rip-name {
+   .rip-name {
     font-size: 40px;
     top: 72%;
   }
+
 }
