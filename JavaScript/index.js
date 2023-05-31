@@ -1,20 +1,49 @@
-document.querySelectorAll('.drumkit-container button').forEach(button => {
-	button.addEventListener('click', () => {
-		const soundId = button.id;
-		const sound = new Audio(`../sound/${soundId}.wav`);
-		sound.play();
-	});
-});
+let codersList = [];
 
-const hamburger_menu = document.querySelector(".hamburger-menu");
-const nav_menu = document.querySelector(".nav-bar");
+const codersListElement = document.getElementById('coders-list');
+const addBtn = document.getElementById('add-btn');
+const startBtn = document.getElementById('start-btn');
 
-hamburger_menu.addEventListener('click', () => {
-	hamburger_menu.classList.toggle("active");
-	nav_menu.classList.toggle("active");
-});
+const coderName = document.getElementById('coder-name');
 
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener('click', () => {
-	hamburger_menu.classList.remove("active");
-	nav_menu.classList.remove("active");
-}));
+function addCoder() {
+	let name = coderName.value;
+	name = name.trim().toLowerCase();
+
+	if (name) {
+		const li = document.createElement('li');
+		const deleteBtn = document.createElement('button');
+		li.className = 'coderName';
+		deleteBtn.className = 'delete';
+		deleteBtn.innerHTML = "x";
+		li.innerHTML = name;
+		codersListElement.appendChild(li);
+		li.appendChild(deleteBtn);
+		codersList.unshift(name);
+		coderName.value = "";
+	}
+	console.log(codersList);
+}
+
+function deleteCoder(event) {
+	if (event.target.classList.contains('delete')) {
+		const li = event.target.parentElement;
+		const name = li.textContent.trim().toLowerCase();
+		let correctName = name.slice(0, name.length - 1);
+		console.log(correctName);
+		const index = codersList.indexOf(correctName);
+		codersList.splice(index, 1);
+		codersListElement.removeChild(li);
+		console.log(codersList);
+	}
+}
+
+function start() {
+	if (codersList.length > 1) {
+		window.location.href = "./html/wheel_of_doom.html";
+	}
+}
+
+addBtn.addEventListener('click', addCoder);
+codersListElement.addEventListener('click', deleteCoder);
+startBtn.addEventListener('click', start);

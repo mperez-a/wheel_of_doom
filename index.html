@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Hit the DOMBoom</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/CSS/style.css">
+	<title>Wheel of Doom</title>
 </head>
 <body>
-    <header>
-        <img class="logo" src="img/logo.png" alt="Logo Hit the Domboom">
-        <nav class="nav-bar">
-            <a href="" class="nav-item">Premium</a>
-            <a href="" class="nav-item">Help</a>
-            <a href="" class="nav-item">Download</a>
-            <a href="" class="sign-up nav-item">Sign Up</a>
-            <a href="" class="log-in nav-item">Log In</a>
-        </nav>
-        <div class="hamburger-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-    </header>
-    <main>
-        <section class="title">
-            <h1>Music for everyone.</h1>
-            <p>Millions of song. No credit car needed.</p>
-            <button class="hit-btn">Hit the</button>
-        </section>
-        <section class="drumkit-container">
-            <div class="gradient"></div>
-            <img class="drumkit-img" src="img/drumkit.png" alt="drumkit photo">
-            <button id="bombo" class="bombo sound"></button>
-            <button id="crash" class="crash sound"></button>
-            <button id="hit-hat" class="hithat sound"></button>
-            <button id="redoblante" class="redoblante sound"></button>
-            <button id="tom1" class="tom1 sound"></button>
-            <button id="tom2" class="tom2 sound"></button>
-            <button id="tom3" class="tom3 sound"></button>
-            <button id="tom4" class="tom4 sound"></button>
-        </section>
-    </main>
-    <footer>
-        <h2>Try Premium free for 1 month.</h2>
-        <p>Play millions of songs ad-free, on-demand, and offline.</p>
-        <button class="pricing-btn">SEE PRICING</button>
-    </footer>
-    <script src="/JavaScript/index.js"></script>
+	<header>
+		<div class="header-container">
+			<img class= "logo" src="/img/logo.png" alt="logo-skull" class="skull-logo">
+		</div>
+		<div>
+			<img class="icono-info" src="/img/information.png" onclick ="openModal()">
+		</div>
+		<div class="modal" id="modalAdd">
+			<div class="modal-container">
+				<div class="close-modal" onclick="closeModal()">x</div> 
+				<p class="info-text">This is a game where a 
+					fair and aleatory system will choose a coder to died.
+					If you want you can add or delete a coder.
+					The list must have at least two coders to kill.</p>   
+			</div>
+		</div>
+	</header>
+	<main>
+		<h1>Wheel of Doom</h1>
+		<input type="text" placeholder="write a name here" id="coder-name">
+		<button id="add-btn">Add</button>
+		<button class="start" id="start-btn">Start</button>
+		<!--<div id="error-message" class="error-message">
+			<span id="error-text"></span>
+			<button id="error-button">Aceptar</button>
+		</div>-->
+		<ul id="coders-list" class="coders-list"></ul>
+	</main>
+	<script src="/JavaScript/index.js"></script>
+	<script src="/JavaScript/pop_up.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </body>
 </html>
