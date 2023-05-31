@@ -1,5 +1,5 @@
-let codersList = localStorage.getItem('names');
-codersList = codersList ? JSON.parse(names) : [];
+let codersList = localStorage.getItem('codersList');
+codersList = codersList ? JSON.parse(codersList) : [];
 
 let errorMessageElement = null;
 
@@ -37,7 +37,7 @@ function deleteCoder(event) {
 		const index = codersList.indexOf(correctName);
 		if (index !== -1) {
 			codersList.splice(index, 1);
-			localStorage.removeItem('correctName', JSON.stringify(codersList));
+			localStorage.setItem('codersList', JSON.stringify(codersList));
 			codersListElement.removeChild(li);
 			console.log(codersList);
 		}
@@ -46,12 +46,15 @@ function deleteCoder(event) {
 
 function start() {
 	try {
-		if (codersList && codersList.length > 1) {
-			window.location.href = "../HTML/wheel_of_doom.html";
-		} else {
-			throw new Error("The coders list is empty.");
-		}
-	} catch (error) {
+		if (codersList.length > 1) {
+		localStorage.setItem('codersListWheel', JSON.stringify(codersList));
+		window.location.href = "../HTML/wheel_of_doom.html";
+	}
+	else {
+		throw new Error("The coders list must have at least 2 names.");
+	}
+	} 
+	catch (error) {
 		displayErrorMessage(error.message);
 	}
 }
@@ -72,6 +75,14 @@ function hideErrorMessage() {
 	errorMessageElement.classList.remove("active");
 }
 
+function clearLocalStorageOnUnload(event) {
+	const isReload = event.currentTarget.performance.navigation.type === 1;
+	if (isReload) {
+		localStorage.removeItem('codersList');
+	}
+}
+
 addBtn.addEventListener('click', addCoder);
 codersListElement.addEventListener('click', deleteCoder);
 startBtn.addEventListener('click', start);
+window.addEventListener('beforeunload', clearLocalStorageOnUnload);

@@ -6,7 +6,8 @@ console.log(names);
 var restartButton = document.getElementById("restart-button");
 
 restartButton.addEventListener("click", function() {
-  window.location.href = "/index.html"; 
+  localStorage.removeItem("codersList");
+  window.location.href = "/index.html";
 });
 
 var swiper = new Swiper(".mySwiper", {
