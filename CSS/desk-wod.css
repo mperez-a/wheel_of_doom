@@ -1,0 +1,48 @@
+@media screen and (min-width: 1024px) {
+  main {
+    margin: 0;
+    height: 72vh;
+  }
+
+  header {
+    background-image: url("/img/header-blood.png");
+    height: 25vh;
+    display: flex;
+  }
+
+
+}
+  #img-skull {
+    margin: 1rem;
+    width: 5vw;
+  }
+
+  .select-coder{
+    height: 3rem;
+    margin-top: 2rem;
+  }
+
+  .restart{
+    height: 3rem;
+    margin-top: 2rem;
+  }
+
+  .header-main{
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .swiper-slide {
+    width: 15vw;
+  }
+  .rip-container {
+    margin:0;
+    width: 15vw;
+  }
+
+   .rip-name {
+    font-size: 40px;
+    top: 72%;
+  }
+}

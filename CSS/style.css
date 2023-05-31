@@ -12,7 +12,6 @@
 * {
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
 	font-family: 'Creepster', sans-serif;
 }
 
@@ -29,7 +28,8 @@ header {
 }
 
 .logo {
-	width: 260px;
+	display: flex;
+	width: 300px;
 }
 
 body {
@@ -46,7 +46,9 @@ body {
 
 .title{
 	display: flex;
-	width: 80vw
+	justify-content: center;
+	width: 100%;
+	
 }
 .icono-info {
 	object-fit: contain;
@@ -135,8 +137,9 @@ button {
 	column-count: 2;
 	color: var(--color-font-header);
 	font-size: 1.5rem;
-	column-gap: 20vw;
+	column-gap: 10vw;
 	margin-top: 1rem;
+	margin-left: 2rem;
 }
 
 .swiper {

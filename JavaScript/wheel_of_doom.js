@@ -17,17 +17,16 @@ restartButton.addEventListener("click", restartGame);
 
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
-  grabCursor: true,
+  
   centeredSlides: true,
   slidesPerView: "auto",
   coverflowEffect: {
     rotate: 15,
     strech: 0,
     depth: 700,
-    modifier: 1,
+    modifier: 0.5,
     slideShadows: true,
   },
-  loop: true,
 });
 
 let startButton = document.getElementById("start-button");
@@ -101,7 +100,7 @@ function congratulation() {
   var closeButton = document.getElementById("close-popup");
 
   congratulationSound.play();
-  popupMessage.textContent = "Congrats! " + names[0] + " yu won the game.";
+  popupMessage.textContent = "¡Congrats! " + names[0] + " You win the game!";
   popup.style.display = "flex";
   startButton.disabled = true;
 
