@@ -14,13 +14,11 @@
 
 .modal-container {
     background: #fff;
-    min-width: 200px;
-    max-width: 90%;
-    min-height: 300px;
-    max-height: 90%;
+    width: 80%;
+    margin-right:2.5rem;
     padding: 20px;
     position: relative;
-	background-image: url("/img/blood-main.png");
+	  background-image: url("/img/blood-main.png");
 }
 
 .close-modal {

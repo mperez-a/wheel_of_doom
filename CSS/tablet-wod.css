@@ -1,0 +1,32 @@
+@media (min-width: 860px) and (max-width: 1026px)  {
+  main {
+    margin: 0;
+    height: 85vh;
+  }
+
+  header {
+    background-image: url("/img/header-blood.png");
+    height: 8vh;
+  }
+
+  h1 {
+    font-size: 15vw;
+    margin-right: 2rem;
+  }
+
+  img.logo {
+    width: 20rem;
+    margin-left: 2rem;
+  }
+
+  .img-skull {
+    display: flex;
+    width: 15vw;
+    margin: 1rem;
+  }
+
+  .swiper-slide {
+    width: 35vw;
+    margin-top: 5rem;
+  }
+}
