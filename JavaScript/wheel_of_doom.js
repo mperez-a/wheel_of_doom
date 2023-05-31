@@ -8,12 +8,12 @@ let spinner = new Audio("/sound/spinner.mp3");
 let explotion = new Audio("/sound/explotion.mp3");
 let laught = new Audio("/sound/laught.mp3");
 
- function restartGame() {
+function restartGame() {
   window.location.href = "/index.html";
   localStorage.removeItem("codersList");
 }
 
- restartButton.addEventListener("click", restartGame);
+restartButton.addEventListener("click", restartGame);
 
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
@@ -101,7 +101,7 @@ function congratulation() {
   var closeButton = document.getElementById("close-popup");
 
   congratulationSound.play();
-  popupMessage.textContent = "¡Felicidades!" + names[0] + " Has ganado el juego.";
+  popupMessage.textContent = "Congrats! " + names[0] + " yu won the game.";
   popup.style.display = "flex";
   startButton.disabled = true;
 

@@ -86,3 +86,12 @@ addBtn.addEventListener('click', addCoder);
 codersListElement.addEventListener('click', deleteCoder);
 startBtn.addEventListener('click', start);
 window.addEventListener('beforeunload', clearLocalStorageOnUnload);
+
+module.exports = {
+	addCoder,
+	deleteCoder,
+	start,
+	displayErrorMessage,
+	hideErrorMessage,
+	clearLocalStorageOnUnload,
+};
