@@ -1,0 +1,22 @@
+@media  screen and(min-width: 1024) {
+
+    main{
+        height: 70vh;
+     }
+     
+     header {
+         background-image: url("/img/header-blood.png");
+         height: 30vh;
+         padding-top: 1rem;
+         display: flex;
+     }
+
+    #img-skull {
+    width: 8vw;
+    vertical-align: middle;
+    padding: 1rem;
+  }
+
+
+    
+}
