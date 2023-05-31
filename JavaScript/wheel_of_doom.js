@@ -100,7 +100,7 @@ function congratulation() {
   var closeButton = document.getElementById("close-popup");
 
   congratulationSound.play();
-  popupMessage.textContent = "¡Congrats! " + names[0] + " You win the game!";
+  popupMessage.textContent = "¡Congrats! " + names[0] + " You won the game!";
   popup.style.display = "flex";
   startButton.disabled = true;
 
