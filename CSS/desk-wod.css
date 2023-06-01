@@ -1,7 +1,7 @@
 @media screen and (min-width: 1024px) {
   main {
     margin: 0;
-    height: 72vh;
+    height: 71vh;
   }
 
   header {
@@ -36,9 +36,21 @@
     width: 15vw;
   }
   
+  .swiper {
+    width: 100%;
+  }
+  
+  .swiper-slide img {
+    width: 15vw;
+  }
+  
+  .rip-container img {
+    margin-bottom: 50px;
+  }
+  
   .rip-container {
     width: 15vw;
-    bottom: 2rem;
+    bottom: 1rem;
     margin: 0;
   }
 

@@ -7,6 +7,11 @@
 	--color-font-main: #b91212;
 	--color-font-header: #ffffff;
 	--color-text-fill: #d9d9d9;
+	--color-error-button: #dc3545;
+	--color-box-shadow: #DBD0AD;
+	--color-background-error: #f8d7da;
+	--color-text-shadow: 2px 2px 4px black;
+	--color-popup-button: #007bff;
 }
 
 * {
@@ -48,11 +53,11 @@ body {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	
 }
+
 .icono-info {
 	object-fit: contain;
-	margin-left: 2px;
+	margin-left: 1rem;
 	width: 10vw;
 }
 
@@ -73,7 +78,7 @@ h1 {
 
 button {
 	background-color: var(--color-font-main);
-	box-shadow: 0px 4px 4px #DBD0AD;
+	box-shadow:var(--color-box-shadow);
 	padding: 0.3rem 1rem;
 	font-size: 1.5rem;
 	margin: 0.7rem;
@@ -95,8 +100,8 @@ button {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: #f8d7da;
-	color: #000000;
+	background-color: var(--color-background-error);
+	color:var(--background-color);
 	padding: 10px;
 	border-radius: 5px;
 	z-index: 9999;
@@ -114,8 +119,8 @@ button {
 }
 
 .error-message #error-button {
-	background-color: #dc3545;
-	color: #000000;
+	background-color: var(--color-error-button);
+	color: var(--background-color);
 	border: none;
 	padding: 5px 10px;
 	border-radius: 3px;
@@ -139,7 +144,7 @@ button {
 	width: 90%;
 	display: flex;
 	flex-wrap: wrap;
-	color: white;
+	color: var(--color-font-header);
 }
 
 #coders-list li{

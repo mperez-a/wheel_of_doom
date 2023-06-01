@@ -13,7 +13,7 @@
 }
 
 .modal-container {
-    background: #fff;
+    background: var(--color-font-header);
     width: 80%;
     margin-right:2.5rem;
     padding: 20px;
@@ -22,13 +22,13 @@
 }
 
 .close-modal {
-background:#b91212;
+background:var(--color-font-main);
 width: 36px;
 height: 36px;
 display: flex;
 justify-content: center;
 align-items: center;
-color: #fff;
+color: var(--color-font-header);
 font-size: 1.3rem;
 position: absolute;
 right: -10px;
@@ -54,7 +54,7 @@ cursor: pointer;
   }
   
   .popup-content {
-    background-color: white;
+    background-color: var(--color-font-header);
     padding: 20px;
     border-radius: 5px;
     text-align: center;

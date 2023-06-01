@@ -1,32 +1,64 @@
-@media (min-width: 860px) and (max-width: 1026px)  {
+@media (min-width: 820px) and (max-width: 1180px){
+
   main {
     margin: 0;
     height: 85vh;
   }
 
-  header {
-    background-image: url("/img/header-blood.png");
-    height: 8vh;
+  .logo{
+    width: 30rem;
+    margin-left: 8rem;
+  }
+
+  header{
+    height: 15vh;
   }
 
   h1 {
-    font-size: 15vw;
+    font-size: 10vw;
     margin-right: 2rem;
   }
 
-  img.logo {
-    width: 20rem;
-    margin-left: 2rem;
+  .header-main{
+    margin:3rem 0rem;
+  }
+
+  .select-coder {
+    padding: 0.2rem 2rem;
   }
 
   .img-skull {
     display: flex;
+    margin: 1rem 0rem;
     width: 15vw;
-    margin: 1rem;
+  }
+
+  .swiper {
+    width: 100%;
   }
 
   .swiper-slide {
-    width: 35vw;
-    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    width: 15vw;
   }
+  
+  .swiper-slide img {
+    width: 50vw;
+  }
+  
+  .rip-container {
+    width: 45vw;
+    bottom: 3rem;
+  }
+
+  .rip-container img {
+    margin-bottom: 3rem;
+  }
+
+   .rip-name {
+    font-size: 50px;
+    top: 80%;
+  }
+  
 }
