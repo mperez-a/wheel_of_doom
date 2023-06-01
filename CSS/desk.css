@@ -39,7 +39,7 @@
   }
 
   .modal-container {
-    background: #fff;
+    background:var(--color-font-header);
     width: 50vw;
     height: 50vh;
     padding: 20px;

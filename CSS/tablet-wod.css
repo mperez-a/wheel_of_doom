@@ -1,16 +1,15 @@
-@media (min-width: 820px) and (max-width: 1180px){
-
+@media (min-width: 820px) and (max-width: 1180px) {
   main {
     margin: 0;
     height: 85vh;
   }
 
-  .logo{
+  .logo {
     width: 30rem;
-    margin-left: 8rem;
+    margin-left: 9rem;
   }
 
-  header{
+  header {
     height: 15vh;
   }
 
@@ -19,8 +18,8 @@
     margin-right: 2rem;
   }
 
-  .header-main{
-    margin:3rem 0rem;
+  .header-main {
+    margin: 3rem 0rem;
   }
 
   .select-coder {
@@ -42,11 +41,11 @@
     justify-content: center;
     width: 15vw;
   }
-  
+
   .swiper-slide img {
     width: 50vw;
   }
-  
+
   .rip-container {
     width: 45vw;
     bottom: 3rem;
@@ -56,9 +55,8 @@
     margin-bottom: 3rem;
   }
 
-   .rip-name {
+  .rip-name {
     font-size: 50px;
     top: 80%;
   }
-  
 }

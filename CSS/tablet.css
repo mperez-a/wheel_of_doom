@@ -1,5 +1,5 @@
 @media (min-width: 820px) and (max-width: 1180px) {
-  .logo{
+  .logo {
     width: 70vw;
     margin-left: 7rem;
   }
@@ -24,8 +24,7 @@
     margin-left: 5rem;
   }
 
-  #coders-list li{
-	font-size: 2.5rem;
-}
-
+  #coders-list li {
+    font-size: 2.5rem;
+  }
 }

@@ -1,6 +1,6 @@
 .logo {
-	display: flex;
-	width: 300px;
+  display: flex;
+  width: 300px;
 }
 
 .skull-main {
@@ -37,7 +37,7 @@ main {
 .swiper {
   width: 100%;
 }
-  
+
 .swiper-slide {
   display: flex;
   justify-content: center;

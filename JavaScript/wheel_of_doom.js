@@ -17,7 +17,6 @@ restartButton.addEventListener("click", restartGame);
 
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
-  
   centeredSlides: true,
   slidesPerView: "auto",
   coverflowEffect: {
@@ -55,7 +54,7 @@ function startGame() {
       console.log(selectedCoder);
 
       showRipCard(selectedCoder, randomIndex);
-      
+
       if (names.length === 1) {
         congratulation();
         return;
@@ -63,7 +62,6 @@ function startGame() {
 
       setTimeout(function () {
         resetGame();
-        
       }, 3000);
     }
   }, slideInterval);
@@ -83,12 +81,10 @@ function showRipCard(selectedCoder, randomIndex) {
   ripContainer.appendChild(nameElement);
   ripContainer.appendChild(ripImage);
 
-  spinner.play();
   explotion.play();
   laught.play();
 
   names.splice(randomIndex, 1);
-
 }
 
 function congratulation() {
