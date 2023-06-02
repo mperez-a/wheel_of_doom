@@ -1,8 +1,6 @@
 const storedCodersList = localStorage.getItem("codersList");
 let names = storedCodersList ? JSON.parse(storedCodersList) : [];
 
-console.log(names);
-
 let restartButton = document.getElementById("restart-button");
 let spinner = new Audio("/sound/spinner.mp3");
 let explotion = new Audio("/sound/explotion.mp3");

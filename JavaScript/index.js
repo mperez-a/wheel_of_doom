@@ -25,7 +25,6 @@ function addCoder() {
     localStorage.setItem("codersList", JSON.stringify(codersList));
     coderName.value = "";
   }
-  console.log(codersList);
 }
 
 function deleteCoder(event) {
@@ -33,13 +32,11 @@ function deleteCoder(event) {
     const li = event.target.parentElement;
     const name = li.textContent.trim().toLowerCase();
     let correctName = name.slice(0, name.length - 1);
-    console.log(correctName);
     const index = codersList.indexOf(correctName);
     if (index !== -1) {
       codersList.splice(index, 1);
       localStorage.setItem("codersList", JSON.stringify(codersList));
       codersListElement.removeChild(li);
-      console.log(codersList);
     }
   }
 }
